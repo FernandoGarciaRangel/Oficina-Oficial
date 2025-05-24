@@ -1,43 +1,59 @@
+"use strict";
+
 import ModelError from "/model/ModelError.js";
 
- export default class Cliente {
-  
-   
-   constructor(cpf, nome, telefone) {
-    this.setCpf(cpf);
-    this.setNome(nome);
-    this.setTelefone(telefone);
+export default class Cliente {
+  #cpf;
+  #nome;
+  #email;
+  #telefone;
+  #endereco;
+
+  constructor(cpf, nome, email, telefone, endereco) {
+    this.#cpf = cpf;
+    this.#nome = nome;
+    this.#email = email;
+    this.#telefone = telefone;
+    this.#endereco = endereco;
   }
 
-  setCpf(cpf) {
-    Cliente.validarCpf(cpf)
-    this.cpf = cpf;
+  getCpf() {
+    return this.#cpf;
+  }
+
+  getNome() {
+    return this.#nome;
+  }
+
+  getEmail() {
+    return this.#email;
+  }
+
+  getTelefone() {
+    return this.#telefone;
+  }
+
+  getEndereco() {
+    return this.#endereco;
   }
 
   setNome(nome) {
     Cliente.validarNome(nome)
-    this.nome = nome;
+    this.#nome = nome;
+  }
+
+  setEmail(email) {
+    this.#email = email;
   }
 
   setTelefone(telefone) {
     Cliente.validarTelefone(telefone)
-    this.telefone = telefone;
+    this.#telefone = telefone;
   }
 
-  
-  // Getters para as propriedades
-  getCpf() {
-    return this.cpf;
+  setEndereco(endereco) {
+    this.#endereco = endereco;
   }
-
-  getNome() {
-    return this.nome;
-  }
-
-  getTelefone() {
-    return this.telefone;
-  }
-  
 
   static validarNome(nome) {
     if(nome == null || nome == "" || nome == undefined)

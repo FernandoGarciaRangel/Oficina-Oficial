@@ -1,5 +1,6 @@
 {
-    "name": "Sistema de Gerenciamento de Clientes",
+    "name": "Oficina Mecânica",
+    "short_name": "Oficina",    
     "short_name": "Gerenciador",
     "description": "Sistema para gerenciamento de clientes e veículos",
     "start_url": "manterCliente.html",
